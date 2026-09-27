@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Kim | Bill &amp; Brim — Ripon, CA</title>
+<meta name="description" content="Meet Kim Beier, owner and creator of Bill & Brim in downtown Ripon, CA. The story behind the hat bar, the boutique on Main Street, and Ripon's Business of the Year.">
+<link rel="canonical" href="https://billandbrim.com/about.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bill &amp; Brim">
+<meta property="og:title" content="About Kim | Bill &amp; Brim — Ripon, CA">
+<meta property="og:description" content="The story behind the hat bar, the boutique on Main Street, and Ripon's Business of the Year.">
+<meta property="og:image" content="https://billandbrim.com/assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://billandbrim.com/about.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="theme-color" content="#2B2320">
+<link rel="icon" href="assets/img/favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.className += ' js';</script>
+<style>
+  /* about-page-only styles */
+  /* :not() keeps this off .quote / .quote-by so they stay on the shared styles */
+  .prose p:not(.quote):not(.quote-by) { font-size: var(--t-md); color: var(--ink-soft); }
+  .prose p.lead { font-size: var(--t-lg); line-height: 1.6; color: var(--ink); }
+  .prose p strong { color: var(--ink); font-weight: 500; }
+  .prose p.quote-by { margin-bottom: 44px; }
+
+  /* story — portrait beside the prose */
+  .story { display: grid; grid-template-columns: .82fr 1.18fr; gap: 64px; align-items: start; }
+  .story__art { position: relative; padding-top: 8px; }
+  .story__art .arch { aspect-ratio: 4 / 5; }
+  .story__caption {
+    font-style: italic;
+    font-weight: 300;
+    font-size: var(--t-md);
+    line-height: 1.4;
+    color: var(--terracotta);
+    margin: 18px 4px 0;
+  }
+
+  /* vertical timeline — thin line, small clay dots */
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 35px;
+    max-width: 700px;
+    position: relative;
+  }
+  /* the spine is its own element so it can draw downward as the
+     section comes into view */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--sand);
+  }
+  /* --draw is set by main.js from scroll position, so the spine grows as you
+     read down the list rather than racing ahead on a timer */
+  .js .timeline[data-draw]::before {
+    transform: scaleY(var(--draw, 1));
+    transform-origin: top;
+    transition: transform .12s linear;
+  }
+  .timeline li { position: relative; padding: 0 0 48px; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: -38.5px;
+    top: 9px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--pumpkin);
+    box-shadow: 0 0 0 5px var(--oat);
+  }
+  .timeline h3 { font-size: var(--t-2xl); margin-bottom: .3em; }
+  .timeline p { color: var(--ink-soft); font-size: var(--t-base); margin-bottom: 0; }
+  .timeline__photo {
+    margin: 22px 0 0;
+    max-width: 460px;
+    background: #FFFDFA;
+    border: 1px solid var(--sand);
+    padding: 10px 10px 12px;
+    box-shadow: var(--shadow);
+  }
+  .timeline__photo img { aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
+  .timeline__photo figcaption {
+    font-size: var(--t-xs);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    padding: 10px 4px 0;
+  }
+
+  .meet { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .meet p { color: var(--ink-soft); }
+  .meet .lead { font-size: var(--t-md); }
+  .meet__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 28px; }
+  .meet__card p { margin-bottom: 14px; }
+  .meet__card p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 900px) {
+    .story { grid-template-columns: 1fr; gap: 44px; }
+    .story__art { max-width: 380px; }
+  }
+  @media (max-width: 820px) {
+    .meet { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .timeline[data-draw]::before { transform: none; transition: none; }
+    .js .timeline[data-draw] { --draw: 1; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="topbar">Custom Hat Bar &amp; Boutique <span aria-hidden="true">&nbsp;·&nbsp;</span> Downtown Ripon</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html">Bill<span class="amp">&amp;</span>Brim</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <ul class="nav__links" id="site-menu" aria-label="Main navigation">
+      <li><a href="hat-bar.html">The Hat Bar</a></li>
+      <li><a href="parties.html">Parties &amp; Events</a></li>
+      <li><a href="boutique.html">The Boutique</a></li>
+      <li><a href="about.html" class="is-active" aria-current="page">About Kim</a></li>
+      <li><a href="visit.html">Visit</a></li>
+      <li class="nav__cta"><a class="btn btn--solid btn--small" href="parties.html#book">Book a Party</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--split">
+    <div class="wrap page-hero__inner">
+      <div>
+        <span class="eyebrow">the one behind the bar</span>
+        <h1>Hi, I'm Kim.</h1>
+        <p>Owner, creator, and the reason the door swings open when you slow down at the window.</p>
+        <div class="page-hero__facts">
+          <div><strong>2023</strong><span class="label label--muted">Opened the doors</span></div>
+          <div><strong>2024</strong><span class="label label--muted">Ribbon cutting</span></div>
+          <div><strong>2026</strong><span class="label label--muted">Business of the Year</span></div>
+        </div>
+      </div>
+      <div class="page-hero__art">
+        <div class="arch"><img src="assets/img/kim-portrait.jpg" width="425" height="531" decoding="async" alt="Kim Beier smiling in a denim jacket beside a bouquet of flowers at the hat bar"></div>
+        <div class="page-hero__polaroid"><img src="assets/img/brand-wall.jpg" width="360" height="640" decoding="async" alt="A shopping bag held up beneath the round rusted-metal Bill &amp; Brim wall sign"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE STORY -->
+  <section class="section">
+    <div class="wrap story">
+      <div class="story__art reveal">
+        <div class="arch">
+          <img src="assets/img/shop-haul.jpg" width="360" height="640" loading="lazy" decoding="async" alt="A customer holding up an armful of sweaters in the middle of the shop, laughing">
+        </div>
+        <p class="story__caption">A good afternoon on Main Street</p>
+      </div>
+      <div class="prose">
+        <p class="lead reveal">Kim Beier will tell you she didn't have it all figured out. She had an idea, a wall of hats in her head, and a stubborn little voice saying <em>go</em>. So she went.</p>
+        <p class="reveal reveal-d1">In November 2023, the hat bar officially opened. Kim's own words that week: "I am absolutely overwhelmed by the love." Ripon showed up — because that's what Ripon does, and because people had been waiting for something like this without knowing it.</p>
+        <p class="reveal reveal-d2">Then it grew. In October 2024, the Ripon Chamber of Commerce brought the big scissors down to Main Street for a ribbon cutting on the full storefront — boutique and hat bar under one roof. There was wine. There was charcuterie. There was, more or less, the whole town, standing on the sidewalk in the October light.</p>
+      </div>
+    </div>
+
+    <div class="wrap wrap--narrow prose" style="margin-top:72px;">
+      <p class="quote reveal">"Don't wait! Just go for it!"</p>
+      <p class="quote-by reveal">Kim's motto, and honestly the whole business plan</p>
+      <p class="reveal">Ask Kim what the shop is actually about and she won't say hats. She'll say people. A local photographer once described her as someone who "radiates pure joy," and that's the product, really — you come in a little unsure, you sit down at the bar, someone fusses over you for an hour, and you leave a little happier than you came in. Better-hatted, too.</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section section--tint">
+    <div class="wrap wrap--narrow">
+      <div class="section-head" data-stagger>
+        <span class="eyebrow">how we got here</span>
+        <h2>The road so far</h2>
+      </div>
+      <ol class="timeline" data-draw>
+        <li class="reveal">
+          <span class="label">November 2023</span>
+          <h3>The hat bar opens</h3>
+          <p>Doors open for the first time. "I am absolutely overwhelmed by the love," Kim wrote that week — and she meant it.</p>
+        </li>
+        <li class="reveal">
+          <span class="label">October 2024</span>
+          <h3>Ribbon cutting on Main Street</h3>
+          <p>The Ripon Chamber of Commerce cut the ribbon on the boutique and hat bar storefront. Wine, charcuterie, and a sidewalk full of neighbors.</p>
+        </li>
+        <li class="reveal">
+          <span class="label">2025</span>
+          <h3>Hundreds of hats later</h3>
+          <p>Bachelorettes, birthdays, girls' nights, walk-ins on a slow Tuesday. No two hats alike, and a lot of very good photos.</p>
+        </li>
+        <li class="reveal">
+          <span class="label">2026</span>
+          <h3>Ripon's Business of the Year</h3>
+          <p>The town made it official. Kim will tell you it belongs to everybody who walked through the door.</p>
+          <figure class="timeline__photo">
+            <img src="assets/img/award-night.jpg" width="360" height="640" loading="lazy" decoding="async" alt="Kim outdoors with the other Ripon Business of the Year honorees on awards night">
+            <figcaption>Awards night in Ripon — Kim with the rest of the year's honorees.</figcaption>
+          </figure>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- WHAT WE BELIEVE -->
+  <section class="section section--rose">
+    <div class="wrap">
+      <div class="section-head section-head--center" data-stagger>
+        <span class="eyebrow">the house rules</span>
+        <h2>What we believe</h2>
+      </div>
+      <div class="grid grid--3">
+        <div class="card reveal">
+          <h3>Everyone gets welcomed in</h3>
+          <p>A visitor once wrote that we "opened their door and invited us to come inside" while they were window-shopping. That wasn't a one-off. If you're looking in, come in.</p>
+        </div>
+        <div class="card reveal reveal-d1">
+          <h3>Handmade beats mass-made</h3>
+          <p>No two hats here come out the same, and that's on purpose. Yours gets built at the bar, by you, with your hands in it.</p>
+        </div>
+        <div class="card reveal reveal-d2">
+          <h3>Small towns deserve special things</h3>
+          <p>Main Street is the heart of Ripon. We're proud to be on it, and we take the sidewalk out front personally.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COME MEET ME -->
+  <section class="section">
+    <div class="wrap meet">
+      <div class="reveal">
+        <span class="eyebrow">no appointment needed</span>
+        <h2>Come meet me.</h2>
+        <p class="lead">The honest truth is you can't really get this shop off a website. Walk in, try on something you'd never pick online, and let's talk about it. Bring a friend. Bring twelve — that's a party, and we do those too.</p>
+        <div class="meet__actions">
+          <a class="btn btn--solid" href="visit.html">Plan Your Visit</a>
+          <a class="btn btn--outline" href="parties.html">Bring Your Crew</a>
+        </div>
+      </div>
+      <div class="card meet__card reveal reveal-d1">
+        <h3 class="label">find me here</h3>
+        <p>114 W Main Street<br>Ripon, CA 95366<br><a href="tel:+12096798076">(209) 679-8076</a></p>
+        <p>Open Tuesday through Saturday, with private parties after hours — <a href="visit.html">full hours &amp; directions</a>.</p>
+        <p><a href="https://www.instagram.com/bill_and_brim/" target="_blank" rel="noopener">Follow along @bill_and_brim</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <span class="eyebrow">kim's advice, free of charge</span>
+    <h2>Life's short. Wear the fun hat.</h2>
+    <p>Don't wait — grab your people and get a date on the books.</p>
+    <div class="cta-band__actions">
+      <a class="btn btn--solid" href="parties.html#book">Book Your Party</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">Bill<span class="amp">&amp;</span>Brim</div>
+        <p class="footer__tag">custom hats &amp; happy hearts</p>
+        <p class="footer__blurb">Custom hat bar &amp; women's boutique in downtown Ripon, California. Owned &amp; created by Kim Beier.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="hat-bar.html">The Hat Bar</a></li>
+          <li><a href="parties.html">Parties &amp; Events</a></li>
+          <li><a href="boutique.html">The Boutique</a></li>
+          <li><a href="about.html">About Kim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>114 W Main St</li>
+          <li>Ripon, CA 95366</li>
+          <li><a href="tel:+12096798076">(209) 679-8076</a></li>
+          <li><a href="visit.html">Hours &amp; directions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Along</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/bill_and_brim/" target="_blank" rel="noopener">Instagram @bill_and_brim</a></li>
+          <li><a href="parties.html#book">Book a party</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer__wordmark" aria-hidden="true">BILL &amp; BRIM</div>
+  <div class="wrap">
+    <div class="footer__bottom">
+      <span>© 2026 Bill &amp; Brim · Ripon, California</span>
+      <span>Made with love on Main Street</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

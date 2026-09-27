@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bill &amp; Brim | Custom Hat Bar &amp; Boutique — Ripon, CA</title>
+<meta name="description" content="Bill & Brim is downtown Ripon's custom hat bar and women's boutique. Design your own hat, shop the boutique, or book a private hat bar party. 114 W Main St, Ripon CA.">
+<link rel="canonical" href="https://billandbrim.com/">
+
+<!-- NOTE: og:image and og:url must be absolute URLs. Update the domain below
+     once billandbrim.com (or whatever domain Kim registers) is live. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bill &amp; Brim">
+<meta property="og:title" content="Bill &amp; Brim | Custom Hat Bar &amp; Boutique — Ripon, CA">
+<meta property="og:description" content="Design a one-of-one hat at the bar, shop the boutique, or book a private party. 114 W Main St, downtown Ripon.">
+<meta property="og:image" content="https://billandbrim.com/assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://billandbrim.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="theme-color" content="#2B2320">
+<link rel="icon" href="assets/img/favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.className += ' js';</script>
+<style>
+  /* homepage-only styles */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 96px 0 110px;
+    background:
+      radial-gradient(ellipse 70% 60% at 85% 15%, color-mix(in srgb, var(--rose) 30%, transparent), transparent),
+      radial-gradient(ellipse 50% 45% at 10% 90%, color-mix(in srgb, var(--sand) 45%, transparent), transparent),
+      var(--rose-soft);
+    border-bottom: 1px solid var(--sand);
+  }
+  .hero__inner { display: grid; grid-template-columns: 1fr .95fr; gap: 64px; align-items: center; }
+  .hero__kicker {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-weight: 300;
+    font-size: var(--t-md);
+    line-height: 1.35;
+    color: var(--terracotta);
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .hero h1 { font-size: clamp(46px, 6.5vw, 84px); margin-bottom: 22px; }
+  .hero h1 .swash { color: var(--terracotta); }
+  .hero p.lede { font-size: var(--t-md); color: var(--ink-soft); max-width: 500px; margin-bottom: 34px; }
+  .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero__art { position: relative; padding: 0 0 140px 0; }
+  .hero__art .arch { aspect-ratio: 4 / 3; border-radius: 70px 70px var(--radius) var(--radius); }
+  .hero__polaroid {
+    position: absolute;
+    bottom: 0;
+    left: -44px;
+    width: 38%;
+    background: #FFFDFA;
+    border: 1px solid var(--sand);
+    padding: 10px 10px 14px;
+    box-shadow: var(--shadow);
+    transform: rotate(-4deg);
+  }
+  .hero__polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
+  /* hero entrance — the words settle first, then the sign, then the polaroid
+     lands on top of it. Runs on load, once, and never again. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero__kicker,
+    .js .hero h1,
+    .js .hero p.lede,
+    .js .hero__actions,
+    .js .tally,
+    .js .hero__art .arch { animation: hero-rise .6s var(--ease) both; }
+    .js .hero__kicker  { animation-delay: .05s; }
+    .js .hero h1       { animation-delay: .13s; }
+    .js .hero p.lede   { animation-delay: .23s; }
+    .js .hero__actions { animation-delay: .31s; }
+    .js .tally         { animation-delay: .39s; }
+    .js .hero__art .arch { animation-delay: .30s; animation-duration: .7s; }
+    .js .hero__polaroid {
+      animation: hero-polaroid .7s var(--ease) both;
+      animation-delay: .48s;
+    }
+  }
+  @keyframes hero-rise {
+    from { opacity: 0; transform: translateY(18px); }
+  }
+  @keyframes hero-polaroid {
+    from { opacity: 0; transform: translateY(20px) rotate(-9deg); }
+    to   { opacity: 1; transform: translateY(0) rotate(-4deg); }
+  }
+  .tally { display: flex; gap: 48px; flex-wrap: wrap; margin-top: 48px; }
+  .tally strong { font-family: var(--font-display); font-size: var(--t-3xl); display: block; color: var(--terracotta); line-height: 1.1; }
+  .tally .label { margin: 4px 0 0; }
+
+  /* three finished hats, straight after the hero — the product, up front */
+  .hat-strip { padding: 64px 0 0; }
+  .hat-strip .label { text-align: center; }
+  .hat-strip__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 20px; }
+  .hat-strip .arch { aspect-ratio: 3 / 4; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .split .card { padding: 0 0 38px; overflow: hidden; }
+  .split .card .card__photo { aspect-ratio: 4 / 3; overflow: hidden; margin-bottom: 30px; border-bottom: 1px solid var(--sand); }
+  .split .card .card__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+  /* these two cards are the homepage's main fork in the road, so they get a
+     bit more presence on hover than an ordinary card: the photo pushes in and
+     the button steps forward. */
+  @media (hover: hover) {
+    .split .card:hover { transform: translateY(-6px); }
+    .split .card:hover .card__photo img { transform: scale(1.045); }
+    .split .card .btn { transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease); }
+    .split .card:hover .btn { transform: translateY(-3px); box-shadow: 0 12px 22px -12px rgba(43, 35, 32, .5); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .split .card .card__photo img,
+    .split .card .btn { transition: none; }
+    .split .card:hover { transform: none; }
+    .split .card:hover .card__photo img,
+    .split .card:hover .btn { transform: none; }
+  }
+  .split .card .card__label,
+  .split .card h3, .split .card p, .split .card a { margin-left: 36px; margin-right: 36px; }
+  .split .card .card__label { padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--sand); }
+  .split .card h3 { font-size: clamp(27px, 3vw, 34px); margin-bottom: 12px; }
+  .split .card p { color: var(--ink-soft); max-width: 34ch; margin-bottom: 26px; }
+  .split .card--hats .card__photo img { object-position: center 46%; }
+  .split .card--shop .card__photo img { object-position: center 22%; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .two-col p.lede { color: var(--ink-soft); font-size: var(--t-md); }
+  .section--ink .two-col p { font-size: var(--t-md); }
+  .perfect-list { list-style: none; margin: 0; padding: 0; font-size: var(--t-base); }
+  .perfect-list li { padding: 12px 0; border-bottom: 1px solid color-mix(in srgb, var(--sand) 60%, transparent); font-weight: 500; }
+  .perfect-list li:last-child { border-bottom: 0; }
+  .note-hand { font-style: italic; font-weight: 300; font-size: var(--t-md); color: var(--rose); margin-top: 20px; }
+
+  @media (max-width: 820px) {
+    .hero__inner, .split, .two-col { grid-template-columns: 1fr; }
+    .hero__art { order: 0; max-width: 400px; margin: 0 auto; padding-bottom: 84px; }
+    .hero__polaroid { left: -10px; width: 42%; }
+    .hero { padding-bottom: 72px; }
+
+    /* stacked, the art sits above the words — so it should arrive first */
+    @media (prefers-reduced-motion: no-preference) {
+      .js .hero__art .arch { animation-delay: .35s; }
+      .js .hero__polaroid  { animation-delay: .22s; }
+      .js .hero__kicker    { animation-delay: .26s; }
+      .js .hero h1         { animation-delay: .34s; }
+      .js .hero p.lede     { animation-delay: .44s; }
+      .js .hero__actions   { animation-delay: .52s; }
+      .js .tally           { animation-delay: .60s; }
+    }
+  }
+  @media (max-width: 640px) {
+    .hat-strip__row { grid-template-columns: 1fr; max-width: 320px; margin-inline: auto; gap: 30px; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "name": "Bill & Brim",
+  "description": "Custom hat bar and women's boutique in downtown Ripon, California.",
+  "image": "https://billandbrim.com/assets/img/og-cover.jpg",
+  "url": "https://billandbrim.com/",
+  "telephone": "+1-209-679-8076",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "114 W Main St",
+    "addressLocality": "Ripon",
+    "addressRegion": "CA",
+    "postalCode": "95366",
+    "addressCountry": "US"
+  },
+  "sameAs": ["https://www.instagram.com/bill_and_brim/"],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "11:00", "closes": "15:00" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="topbar">Custom Hat Bar &amp; Boutique <span aria-hidden="true">&nbsp;·&nbsp;</span> Downtown Ripon</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html">Bill<span class="amp">&amp;</span>Brim</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <ul class="nav__links" id="site-menu" aria-label="Main navigation">
+      <li><a href="hat-bar.html">The Hat Bar</a></li>
+      <li><a href="parties.html">Parties &amp; Events</a></li>
+      <li><a href="boutique.html">The Boutique</a></li>
+      <li><a href="about.html">About Kim</a></li>
+      <li><a href="visit.html">Visit</a></li>
+      <li class="nav__cta"><a class="btn btn--solid btn--small" href="parties.html#book">Book a Party</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <div>
+        <span class="hero__kicker">custom hats &amp; pretty things</span>
+        <h1>Make a hat that's <span class="swash">all yours.</span></h1>
+        <p class="lede">Create a hat that feels like you at our custom hat bar and boutique in downtown Ripon. Pick your hat, choose your trims, and wear it home.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="parties.html#book">Book a Party</a>
+          <a class="btn btn--outline" href="visit.html">Plan Your Visit</a>
+        </div>
+<p class="hero__location">114 W Main Street, Ripon <span aria-hidden="true">·</span> <a href="hat-bar.html">See how the hat bar works</a></p>
+      </div>
+      <div class="hero__art">
+        <div class="arch"><img src="assets/img/brand-sign.jpg" width="740" height="552" fetchpriority="high" decoding="async" alt="The Bill &amp; Brim shop sign — cream metal letters mounted on weathered rust-brown steel"></div>
+        <div class="hero__polaroid"><img src="assets/img/patch-floral.jpg" width="1440" height="1800" decoding="async" alt="Close-up of a trucker hat trimmed with daisy and floral patches"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINISHED HATS -->
+  <section class="hat-strip">
+    <div class="wrap">
+      <span class="label">fresh off the bar — no two ever match</span>
+      <div class="hat-strip__row">
+        <div class="arch arch--zoom reveal"><img src="assets/img/hat-bee-trucker.jpg" width="1170" height="2076" loading="lazy" decoding="async" alt="White and black trucker hat with a rhinestone crown, chenille B patch, and bee and daisy patches"></div>
+        <div class="arch arch--zoom reveal reveal-d1"><img src="assets/img/hat-tan-feathers.jpg" width="1440" height="1800" loading="lazy" decoding="async" alt="Tan felt hat with teal and rust velvet bands, feathers, and a fine gold star chain"></div>
+        <div class="arch arch--zoom reveal reveal-d2"><img src="assets/img/hat-horses.jpg" width="1170" height="2076" loading="lazy" decoding="async" alt="Tan trucker hat with a horse patch reading Hold Your Horses and a checkered bow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS A HAT BAR -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head section-head--center" data-stagger>
+        <span class="eyebrow">wait — what's a hat bar?</span>
+        <h2>It's the most fun you'll have in a hat.</h2>
+        <p>Think of it like a build-your-own-bouquet bar, but for hats. You pick the hat, then work down the bar choosing everything that goes on it. No two ever come out the same — that's the point.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card reveal">
+          <div class="step__num">1</div>
+          <h3>Pick your hat</h3>
+          <p>Trucker, rancher, wool felt, wide brim — try them all on until one feels like you.</p>
+        </div>
+        <div class="card reveal reveal-d1">
+          <div class="step__num">2</div>
+          <h3>Style the brim</h3>
+          <p>Bands, feathers, charms, dried florals, playing cards, custom branding — build it piece by piece at the bar.</p>
+        </div>
+        <div class="card reveal reveal-d2">
+          <div class="step__num">3</div>
+          <h3>Wear it home</h3>
+          <p>We finish it right there while you watch. You walk out the door in a one-of-one.</p>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:40px;" class="reveal"><a class="btn btn--outline" href="hat-bar.html">See the whole experience</a></p>
+    </div>
+  </section>
+
+  <!-- TWO SIDES -->
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="section-head" data-stagger>
+        <span class="eyebrow">two shops, one door</span>
+        <h2>The hat bar. The boutique. Come for one, stay for both.</h2>
+      </div>
+      <div class="split">
+        <div class="card card--hats reveal">
+          <div class="card__photo"><img src="assets/img/hat-pearl-fedora.jpg" width="737" height="587" loading="lazy" decoding="async" alt="A camel wool fedora finished at the hat bar with a ribbon band, pearl chain, and gold charms"></div>
+          <span class="label card__label">made at the bar</span>
+          <h3>The Hat Bar</h3>
+          <p>Custom hats made with you, not just for you. Come on your own or bring the whole crew — birthdays, bachelorettes, girls' nights, team nights.</p>
+          <a class="btn btn--solid btn--small" href="hat-bar.html">Build Your Hat</a>
+        </div>
+        <div class="card card--shop reveal reveal-d1">
+          <div class="card__photo"><img src="assets/img/boutique-sweaters.jpg" width="1000" height="1032" loading="lazy" decoding="async" alt="A customer holding up knit sweaters inside the Bill &amp; Brim boutique"></div>
+          <span class="label card__label">new every week</span>
+          <h3>The Boutique</h3>
+          <p>Women's clothing, gifts, and the kind of finds that make you say "okay, one more thing." New pieces land all season long.</p>
+          <a class="btn btn--solid btn--small" href="boutique.html">Peek Inside</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIES TEASER -->
+  <section class="section section--rose">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="reveal">
+          <span class="eyebrow">bring your people</span>
+          <h2>The best party favor is the one on your head.</h2>
+          <p class="lede">Book the bar for a bachelorette, birthday, bridal shower, or a just-because girls' night. Everyone leaves with a hat they made themselves — and about a hundred photos.</p>
+          <a class="btn btn--solid" href="parties.html">See Party Packages</a>
+        </div>
+        <div class="card reveal reveal-d1">
+          <h3 class="label">perfect for…</h3>
+          <ul class="perfect-list">
+            <li>Bachelorette parties</li>
+            <li>Birthdays</li>
+            <li>Bridal showers</li>
+            <li>Girls' night out</li>
+            <li>Team &amp; work events</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY QUOTE -->
+  <section class="section">
+    <div class="wrap reveal">
+      <p class="quote">"The owners opened their door and invited us in as we checked out the window display. They were so friendly we couldn't resist."</p>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="section section--ink">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="reveal">
+          <span class="eyebrow">come see us</span>
+          <h2>Right on Main Street, in the heart of downtown Ripon.</h2>
+          <p>114 W Main Street, Ripon, CA 95366<br><a href="tel:+12096798076" style="color: var(--rose);">(209) 679-8076</a></p>
+          <a class="btn btn--solid" href="visit.html">Plan Your Visit</a>
+        </div>
+        <div class="reveal reveal-d1">
+          <h3 class="label">Shop Hours</h3>
+          <ul class="hours-list">
+            <li><strong>Tuesday – Friday</strong><span>11am – 5pm</span></li>
+            <li><strong>Saturday</strong><span>11am – 3pm</span></li>
+            <li><strong>Sunday – Monday</strong><span>Closed</span></li>
+          </ul>
+          <p class="note-hand">Private parties book after hours, too!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <span class="eyebrow">ready when you are</span>
+    <h2>Grab your girls. We'll set the bar.</h2>
+    <p>Dates fill up fast around holidays and wedding season — get your party on the books.</p>
+    <div class="cta-band__actions">
+      <a class="btn btn--solid" href="parties.html#book">Book Your Party</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">Bill<span class="amp">&amp;</span>Brim</div>
+        <p class="footer__tag">custom hats &amp; happy hearts</p>
+        <p class="footer__blurb">Custom hat bar &amp; women's boutique in downtown Ripon, California. Owned &amp; created by Kim Beier.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="hat-bar.html">The Hat Bar</a></li>
+          <li><a href="parties.html">Parties &amp; Events</a></li>
+          <li><a href="boutique.html">The Boutique</a></li>
+          <li><a href="about.html">About Kim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>114 W Main St</li>
+          <li>Ripon, CA 95366</li>
+          <li><a href="tel:+12096798076">(209) 679-8076</a></li>
+          <li><a href="visit.html">Hours &amp; directions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Along</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/bill_and_brim/" target="_blank" rel="noopener">Instagram @bill_and_brim</a></li>
+          <li><a href="parties.html#book">Book a party</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer__wordmark" aria-hidden="true">BILL &amp; BRIM</div>
+  <div class="wrap">
+    <div class="footer__bottom">
+      <span>© 2026 Bill &amp; Brim · Ripon, California</span>
+      <span>Made with love on Main Street</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
