@@ -43,3 +43,6 @@ tools
 *.mov
 assets/Hat 3_files
 sedOUpZ2C
+
+.vercel
+.env*
