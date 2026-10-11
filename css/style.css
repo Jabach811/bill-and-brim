@@ -543,6 +543,30 @@ strong { font-weight: 500; }
   border-color: var(--terracotta);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--rose) 35%, transparent);
 }
+.form select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 44px;
+  background: #FFFDFA url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23884938' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center;
+}
+.form select:hover { border-color: var(--terracotta); }
+/* Chrome/Edge let us style the open list too; other browsers keep their own */
+@supports (appearance: base-select) {
+  .form select, .form select::picker(select) { appearance: base-select; }
+  .form select::picker-icon { display: none; }
+  .form select::picker(select) {
+    border: 1px solid var(--sand);
+    border-radius: var(--radius);
+    background: #FFFDFA;
+    padding: 6px;
+    margin-top: 6px;
+    box-shadow: 0 12px 32px color-mix(in srgb, var(--ink) 14%, transparent);
+  }
+  .form select option { padding: 10px 12px; border-radius: calc(var(--radius) - 2px); color: var(--ink); }
+  .form select option:hover, .form select option:focus-visible { background: var(--oat); outline: none; }
+  .form select option:checked { color: var(--terracotta); font-weight: 400; }
+  .form select option::checkmark { color: var(--terracotta); }
+}
 /* spam trap — real people never see it, bots fill it in */
 .form .gotcha { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
