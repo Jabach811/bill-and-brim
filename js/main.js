@@ -38,6 +38,30 @@ document.querySelectorAll('[data-stagger]').forEach((group) => {
   });
 });
 
+// Instagram strip: with a feed URL set, swap the stand-in photos for Kim's
+// latest posts. Without one, or if the feed fails, the stand-ins stay.
+const insta = document.querySelector('.insta[data-feed]');
+if (insta?.dataset.feed) {
+  fetch(insta.dataset.feed)
+    .then((r) => r.json())
+    .then((data) => {
+      const posts = (Array.isArray(data) ? data : data.posts).slice(0, 6);
+      const tiles = insta.querySelectorAll('.insta__grid a');
+      posts.forEach((post, i) => {
+        const tile = tiles[i];
+        const img = tile?.querySelector('img');
+        const src = post.sizes?.medium?.mediaUrl || post.thumbnailUrl || post.mediaUrl;
+        if (!img || !src) return;
+        tile.href = post.permalink;
+        img.src = src;
+        img.removeAttribute('width');
+        img.removeAttribute('height');
+        img.alt = (post.prunedCaption || post.caption || 'Recent Bill & Brim Instagram post').slice(0, 140);
+      });
+    })
+    .catch(() => {});
+}
+
 // scroll reveal
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
@@ -136,6 +160,11 @@ function updateDateMinimum() {
 }
 updateDateMinimum();
 dateInput?.addEventListener('focus', updateDateMinimum);
+// Desktop Chrome only opens the calendar from the icon; open it from anywhere in the box.
+dateInput?.addEventListener('click', () => { try { dateInput.showPicker(); } catch {} });
+const markDateEmpty = () => dateInput?.classList.toggle('is-empty', !dateInput.value);
+markDateEmpty();
+dateInput?.addEventListener('input', markDateEmpty);
 
 // Only a configured endpoint can enable submission. The HTML also stays safe
 // when JavaScript is unavailable. No customer information is stored locally.
