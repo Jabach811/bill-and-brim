@@ -98,6 +98,29 @@
   }
   .hand-note-wrap { text-align: center; margin-top: 36px; }
 
+  /* party gallery */
+  .party-gallery { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: 560px; }
+  .party-gallery figure { position: relative; margin: 0; overflow: hidden; border-radius: 4px; background: var(--sand); }
+  .party-gallery figure:first-child { grid-row: span 2; }
+  .party-gallery img { width: 100%; height: 100%; object-fit: cover; }
+  .party-gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 12px; font-size: var(--t-sm); color: var(--cream); background: linear-gradient(transparent, rgba(43, 35, 32, .7)); }
+
+  /* gift card */
+  .gift { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .gift__card { aspect-ratio: 1.6; background: var(--ink); color: var(--cream); border-radius: 14px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 30px 60px -28px rgba(43, 35, 32, .55); }
+  .gift__card .logo { font: 400 40px/1 var(--font-display); }
+  .gift__card .logo .amp { color: var(--rose); }
+  .gift__card small { letter-spacing: .16em; text-transform: uppercase; font-size: 12px; color: color-mix(in srgb, var(--oat) 70%, transparent); }
+  .gift p { color: var(--ink-soft); font-size: var(--t-md); }
+
+  @media (max-width: 760px) {
+    .party-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: auto; height: auto; }
+    .party-gallery figure { aspect-ratio: 4 / 5; }
+    .party-gallery figure:first-child { grid-column: span 2; grid-row: auto; aspect-ratio: 4 / 3; }
+    .gift { grid-template-columns: 1fr; gap: 36px; }
+    .gift__card { max-width: 420px; }
+  }
+
   @media (max-width: 900px) {
     .party-intro { grid-template-columns: 1fr; gap: 36px; }
     .party-intro .arch { max-width: 340px; margin: 0 auto; }
@@ -153,6 +176,23 @@
       <div class="page-hero__art">
         <div class="arch"><img src="assets/img/princess-party.jpg" width="1080" height="1920" decoding="async" alt="A group of young women in matching custom trucker hats and pageant sashes posing together in the shop"></div>
         <div class="page-hero__polaroid"><img src="assets/img/hat-bee-trucker.jpg" width="1170" height="2076" decoding="async" alt="A finished trucker hat with a rhinestone crown, chenille B patch, and bee and daisy patches"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTY GALLERY -->
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="section-head section-head--center" data-stagger>
+        <span class="eyebrow">real parties, real hats</span>
+        <h2>Everybody leaves with a one-of-one.</h2>
+      </div>
+      <div class="party-gallery reveal">
+        <figure><img src="assets/img/hat-horses.jpg" width="1170" height="2076" loading="lazy" decoding="async" alt="A tan trucker hat with a horse patch, a Hold Your Horses patch, and a checkered bow"><figcaption>Hold your horses</figcaption></figure>
+        <figure><img src="assets/img/party-patches.jpg" width="612" height="527" loading="lazy" decoding="async" alt="A smiling customer in braids wearing her finished patch hat, friends beside her"><figcaption>Patches picked, hat built</figcaption></figure>
+        <figure><img src="assets/img/shop-friends.jpg" width="360" height="640" loading="lazy" decoding="async" alt="Two friends posing in the boutique with their shopping bags"><figcaption>A Saturday with the girls</figcaption></figure>
+        <figure><img src="assets/img/hat-pearl-fedora.jpg" width="737" height="587" loading="lazy" decoding="async" alt="A tan felt fedora with a pearl chain band and gold charms"><figcaption>Pearls and a fedora</figcaption></figure>
+        <figure><img src="assets/img/hat-motherhood.jpg" width="360" height="640" loading="lazy" decoding="async" alt="A trucker hat embroidered with Motherhood, raising world changers full time"><figcaption>Motherhood, made to order</figcaption></figure>
       </div>
     </div>
   </section>
@@ -420,6 +460,23 @@
       </div>
 
       <p class="hand-note-wrap reveal reveal-d3"><span class="hand-note">Still not sure? Just ask — we're friendly.</span></p>
+    </div>
+  </section>
+
+  <!-- GIFT CARDS -->
+  <section class="section section--tint" id="gift-cards">
+    <div class="wrap gift">
+      <div class="gift__card reveal" aria-hidden="true">
+        <small>gift card</small>
+        <div class="logo">Bill<span class="amp"> &amp; </span>Brim</div>
+        <small>114 W Main Street · Ripon</small>
+      </div>
+      <div class="reveal reveal-d1">
+        <span class="eyebrow">for birthdays, bridesmaids, and just because</span>
+        <h2>A hat they'll actually wear.</h2>
+        <p>Gift cards in any amount, good in the boutique or at the hat bar. Pick one up at the shop or give us a call and we'll have it ready.</p>
+        <a class="btn btn--solid" href="tel:+12096798076">Call to Buy</a>
+      </div>
     </div>
   </section>
 
